@@ -24,11 +24,27 @@
         android:id="@+id/lat_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/lattitude"/>
+        android:hint="@string/lattitude"
+        android:inputType="numberDecimal|numberSigned"/>
 
     <EditText
         android:id="@+id/lon_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/longitutde"/>
+        android:hint="@string/longitutde"
+        android:inputType="numberDecimal|numberSigned"/>
+
+    <EditText
+        android:id="@+id/lat_tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/latitude_2"
+        android:inputType="numberDecimal|numberSigned"/>
+
+    <EditText
+        android:id="@+id/lon_tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/longitude_2"
+        android:inputType="numberDecimal|numberSigned"/>
 </LinearLayout>

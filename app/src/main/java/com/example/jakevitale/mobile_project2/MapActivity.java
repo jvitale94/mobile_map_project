@@ -13,8 +13,11 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class MapActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    private String lat = "0";
-    private String lon = "0";
+    private float lat1;
+    private float lon1;
+    private float lat2;
+    private float lon2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,12 +28,16 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         Bundle bundle = getIntent().getExtras();
-        String message = bundle.getString("message");
-        String[] parts = message.split("#");
-        lat = parts[0];
-        lon = parts[1];
-        System.out.println(lat);
-        System.out.println(lon);
+        float [] vals = bundle.getFloatArray("message");
+        lat1 = vals[0];
+        lon1 = vals[1];
+        lat2 = vals[2];
+        lon2 = vals[3];
+        System.out.println(lat1);
+        System.out.println(lat2);
+        System.out.println(lon1);
+        System.out.println(lon2);
+
 
     }
 
@@ -47,12 +54,17 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        float lat_val = Float.parseFloat(lat);
-        float lon_val = Float.parseFloat(lon);
+
+        System.out.println(lat1);
+        System.out.println(lat2);
+        System.out.println(lon1);
+        System.out.println(lon2);
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(lat_val, lon_val);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker Custom"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng marker1 = new LatLng(lat1, lon1);
+        LatLng marker2 = new LatLng(lat2, lon2);
+        mMap.addMarker(new MarkerOptions().position(marker1).title("Marker 1"));
+        mMap.addMarker(new MarkerOptions().position(marker2).title("Marker 2"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(marker1));
     }
 }
