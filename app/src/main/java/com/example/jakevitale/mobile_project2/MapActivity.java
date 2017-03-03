@@ -373,26 +373,4 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
 
         }
     }
-
-
-    private class drawRoute extends AsyncTask<LatLng, Object, ArrayList<Marker>> {
-
-        @Override
-        protected ArrayList<Marker> doInBackground(LatLng... params) {
-
-            LatLng l1 = params[0];
-            LatLng l2 = params[1];
-
-            Marker m1 = mMap.addMarker(new MarkerOptions().position(l1).title("M1: " + l1.latitude + ", " + l1.longitude));
-            Marker m2 = mMap.addMarker(new MarkerOptions().position(l2).title("M2: " + l2.latitude + ", " + l2.longitude));
-
-            System.out.println("ASYNC");
-            return null;
-        }
-
-        protected void onPostExecute(Marker... params) {
-            one.remove();
-
-        }
-    }
 }
