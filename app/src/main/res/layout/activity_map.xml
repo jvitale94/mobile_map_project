@@ -1,9 +1,100 @@
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:map="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/map"
-    android:name="com.google.android.gms.maps.SupportMapFragment"
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.jakevitale.mobile_project2.MapActivity" />
+    android:orientation="vertical"
+    android:weightSum="4">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight=".4"
+        android:orientation="vertical">
+
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:map="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.example.jakevitale.mobile_project2.MapActivity" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.2"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edit1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Latitude 1"
+            android:inputType="numberDecimal|numberSigned"
+            android:textColor="#000" />
+
+        <EditText
+            android:id="@+id/edit2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Longitude 1"
+            android:inputType="numberDecimal|numberSigned"
+            android:textColor="#000" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="changeOne"
+            android:text="@string/change_marker_1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.2"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edit3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Latitude 2"
+            android:inputType="numberDecimal|numberSigned"
+            android:textColor="#000" />
+
+        <EditText
+            android:id="@+id/edit4"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:hint="Longitude 2"
+            android:inputType="numberDecimal|numberSigned"
+            android:textColor="#000" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:onClick="changeTwo"
+            android:text="@string/change_marker_2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:onClick="drawPath"
+            android:text="@string/draw_path">
+
+        </Button>
+    </LinearLayout>
+
+</LinearLayout>
+
+    <!--android:layout_weight="1"-->

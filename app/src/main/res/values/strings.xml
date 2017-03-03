@@ -9,4 +9,7 @@
     <string name="longitutde">longitutde</string>
     <string name="latitude_2">latitude 2</string>
     <string name="longitude_2">longitude 2</string>
+    <string name="change_marker_1">Change 1</string>
+    <string name="change_marker_2">Change 2</string>
+    <string name="draw_path">Draw Path</string>
 </resources>

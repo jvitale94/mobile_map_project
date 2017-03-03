@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, MapActivity.class);
         intent.putExtra("message", vals);
-        //intent.putExtra("message2", lat_lon2);
         startActivity(intent);
     }
 }
